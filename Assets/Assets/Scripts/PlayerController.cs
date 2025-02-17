@@ -1,37 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float movespeed = 1f;
-    private PlayerControls playerControls;
-    private Vector2 movement;
+    private Vector2 inputVec; // πÊ«‚ ¿Œ«≤
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
+    private Animator anim;
 
     private void Awake()
-    {
-        playerControls = new PlayerControls();
+    {        
         rb = GetComponent<Rigidbody2D>();
-    }
-    private void OnEnable()
-    {
-        playerControls.Enable();
-    }
-    private void Update()
-    {
-        PlayerInput();
-    }
+        sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
+    }    
+    
     private void FixedUpdate()
     {
         Move();
     }
-    private void PlayerInput()
+    private void LateUpdate()
     {
-        movement = playerControls.Movement.Move.ReadValue<Vector2>();
+        anim.SetFloat("Speed", inputVec.magnitude);
+        if (inputVec.x != 0)
+        {
+            sr.flipX = inputVec.x < 0;
+        }
     }
+    
     private void Move()
     {
-        rb.MovePosition(rb.position + movement * (movespeed * Time.fixedDeltaTime));
+        Vector2 nextVec = inputVec * movespeed * Time.fixedDeltaTime;
+        rb.MovePosition(rb.position + nextVec);
+    }
+    private void OnMove(InputValue value)
+    {
+        inputVec = value.Get<Vector2>();
     }
 }
