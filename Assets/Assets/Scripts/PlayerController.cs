@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float movespeed = 1f;
-    private Vector2 inputVec; // 방향 인풋
+    private Vector2 inputVec; // 방향 인풋을 이걸로
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private Animator anim;
