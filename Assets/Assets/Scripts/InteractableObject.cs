@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class InteractableObject : MonoBehaviour
 {
-    private bool inTrigger;
-    private void OnTriggerEnter2D(Collider other)
+    [SerializeField] private bool inTrigger;
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
@@ -28,6 +28,8 @@ public class InteractableObject : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             // ¾À ÀüÈ¯
+            if(inTrigger)
+            Debug.Log("´­·¶´Ù");
         }
     }
 }
