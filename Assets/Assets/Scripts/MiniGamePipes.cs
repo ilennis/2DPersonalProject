@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class MinigameLoad : MonoBehaviour
+public class MiniGamePipes : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private float speed = 1f;
     void Start()
     {
         
@@ -14,6 +13,6 @@ public class MinigameLoad : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position += Vector3.left * speed * Time.deltaTime;   
     }
 }
