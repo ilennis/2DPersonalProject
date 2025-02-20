@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;
 public class InteractableObject : MonoBehaviour
 {
     [SerializeField] private bool inTrigger;
+    [SerializeField] private GameObject gameObject;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             Debug.Log("E ´©¸£±â");
             inTrigger = true;
+            gameObject.SetActive(true);
         }
         
             
@@ -21,6 +23,7 @@ public class InteractableObject : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inTrigger = false;
+            gameObject.SetActive(false);
         }
     }
     private void Update()
@@ -29,7 +32,7 @@ public class InteractableObject : MonoBehaviour
         {
             // ¾À ÀüÈ¯
             if(inTrigger)
-            Debug.Log("´­·¶´Ù");
+                SceneManager.LoadScene("SampleScene");
         }
     }
 }

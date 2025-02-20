@@ -394,7 +394,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 335481402}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 877540288}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &335481402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,6 +461,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MiniGame
       objectReference: {fileID: 0}
+    - target: {fileID: 6771404393327217915, guid: 2233c22a432433d4cbf8895fae19ebc9, type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 245675283}
+    - target: {fileID: 6771404393327217915, guid: 2233c22a432433d4cbf8895fae19ebc9, type: 3}
+      propertyPath: wallPrefab
+      value: 
+      objectReference: {fileID: 4997679294201724906, guid: 01257312085882a459cd73cbbe5effc6, type: 3}
     - target: {fileID: 7049207227104539377, guid: 2233c22a432433d4cbf8895fae19ebc9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -490,7 +510,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 54539718173192314, guid: 2233c22a432433d4cbf8895fae19ebc9, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7049207227104539377, guid: 2233c22a432433d4cbf8895fae19ebc9, type: 3}
       insertIndex: 0
@@ -1083,7 +1104,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 940872215}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 877540288}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &940872215
 MonoBehaviour:
   m_ObjectHideFlags: 0
