@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PipeSpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
+    [SerializeField] private float heightRange = 2.5f;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if(collision.CompareTag("Edge"))
+        {
+            Debug.Log("Entered");
+            collision.transform.parent.position = new Vector2(12, Random.Range(-heightRange, heightRange));
+        }
     }
 }
